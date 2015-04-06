@@ -1,0 +1,7 @@
+{
+	"project": "Fudo-Linux",
+	"rsync": {
+		"exclude": ".git",
+		"destination": "your-server-destination"
+	}
+}
