@@ -21,7 +21,7 @@ class Signals:
         NewFudoDescription = buf.get_text(buf.get_start_iter(), buf.get_end_iter(), True)
         data.append([NewFudoName, NewFudoDescription])
         print(data)
-        f = open("list/todo.json", "w")
+        f = open("lists/todo.json", "w")
         f.write(json.dumps(data))
         self.addFudo.hide()
     def onCancel(self, *args):
