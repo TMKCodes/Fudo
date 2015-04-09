@@ -9,3 +9,6 @@ git clone https://github.com/TMKCodes/Fudo.git
 cd Fudo
 python fudo.py
 ```
+
+When you start doing a Fudo from the To-Do list you will start a timer for the Fudo. You can pause the timer if you want to do something else. When Fudo timer is active or paused it will reside in the Doing list. Once you stop the timer the Fudo will be moved to Done list. 
+
