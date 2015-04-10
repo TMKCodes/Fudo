@@ -13,6 +13,7 @@ class Fudo:
         data = json.loads(f.read())
         for fudo in data:
             button = Gtk.Button(fudo[0])
+            button.connect("clicked", self.onToDoClick)
             self.todoVBox.add(button);
         self.todoViewport.add(self.todoVBox)
     def onDeleteWindow(self, *args):
@@ -33,6 +34,7 @@ class Fudo:
         NewFudoDescription.set_buffer(buf)
         data.append([NewFudoNameText, NewFudoDescriptionText])
         button = Gtk.Button(NewFudoNameText)
+        button.connect("clicked", self.onToDoClick)
         self.todoVBox.add(button)
         print(data)
         f = open("lists/todo.json", "w")
@@ -47,6 +49,12 @@ class Fudo:
         buf.set_text("")
         NewFudoDescription.set_buffer(buf)
         self.addFudo.hide()
+    def onToDoClick(self, *args):
+        f = open("lists/todo.json", "r")
+        data = json.loads(f.read())
+        for fudo in data:
+            if fudo[0] == args[0].get_label():
+                print(fudo[1])
 
 if __name__ == "__main__":
     builder = Gtk.Builder()

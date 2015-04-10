@@ -165,7 +165,7 @@
         </child>
         <child>
           <object class="GtkButton" id="button1">
-            <property name="label" translatable="yes">Add New To-Do</property>
+            <property name="label" translatable="yes">Add New Fudo</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
