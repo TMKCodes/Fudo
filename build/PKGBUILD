@@ -1,6 +1,6 @@
 # Maintainer: Toni Korpela <toni@yawnbits.com>
 pkgname='fudo-git'
-pkgver=r18.814713b
+pkgver=r20.087bd03
 pkgrel=1
 pkgdesc='Simple todo application to manage your tasks.'
 arch=('i686' 'x86_64')
