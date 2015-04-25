@@ -69,7 +69,6 @@ class Fudo:
         button = Gtk.Button(NewFudoNameText)
         button.connect("clicked", self.onToDoClick)
         self.todoVBox.add(button)
-        print(data)
         f = open("lists/todo.json", "w")
         f.write(json.dumps(data, indent=4))
         self.window.show_all()

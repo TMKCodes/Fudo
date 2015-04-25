@@ -1,6 +1,6 @@
 # Maintainer: Toni Korpela <toni@yawnbits.com>
 pkgname='fudo-git'
-pkgver=r15.c14f87f
+pkgver=r16.c8e3205
 pkgrel=1
 pkgdesc='Simple todo application to manage your tasks.'
 arch=('i686' 'x86_64')
@@ -39,13 +39,13 @@ check() {
 package() {
 	cd "$srcdir/${pkgname%-git}"
 	sed -i 's/fudo.glade/\/usr\/share\/fudo\/fudo.glade/g' fudo.py
-	sed -i 's/lists\//\/usr\/share\/fudo\/lists/g' fudo.py
+	sed -i 's/lists\//\/usr\/share\/fudo\/lists\//g' fudo.py
 	mkdir -p $pkgdir/usr/share/fudo/lists
 	mkdir -p $pkgdir/usr/bin
-	install -m755 fudo.glade $pkgdir/usr/share/fudo/fudo.glade
-	install -m755 lists/todo.json $pkgdir/usr/share/fudo/lists/todo.json
-	install -m755 lists/doing.json $pkgdir/usr/share/fudo/lists/doing.json
-	install -m755 lists/done.json $pkgdir/usr/share/fudo/lists/done.json
+	install -m777 fudo.glade $pkgdir/usr/share/fudo/fudo.glade
+	install -m777 lists/todo.json $pkgdir/usr/share/fudo/lists/todo.json
+	install -m777 lists/doing.json $pkgdir/usr/share/fudo/lists/doing.json
+	install -m777 lists/done.json $pkgdir/usr/share/fudo/lists/done.json
 	install -m755 fudo.py $pkgdir/usr/bin/fudo.py
 	echo -e "#!/bin/bash\ncd /usr/bin/\npython fudo.py\n" > fudo
 	install -m755 fudo $pkgdir/usr/bin/fudo
