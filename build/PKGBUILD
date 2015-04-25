@@ -1,6 +1,6 @@
 # Maintainer: Toni Korpela <toni@yawnbits.com>
 pkgname='fudo-git'
-pkgver=r16.c8e3205
+pkgver=r18.814713b
 pkgrel=1
 pkgdesc='Simple todo application to manage your tasks.'
 arch=('i686' 'x86_64')
@@ -12,7 +12,7 @@ makedepends=('git')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 replaces=()
-backup=()
+backup=('usr/share/fudo/lists/todo.json' 'usr/share/fudo/lists/doing.json' 'usr/share/fudo/lists/done.json')
 options=()
 install=
 source=('fudo::git+https://github.com/TMKCodes/Fudo.git')
