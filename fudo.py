@@ -163,6 +163,9 @@ class Fudo:
             f.write(json.dumps(doing, indent=4));
         else:
             f.write("[]");
+        self.loadMainData();
+        self.window.show_all()
+        self.Fudo.hide();
     def onFudoPause(self, *args):
         return 0;
     def onFudoStart(self, *args):
@@ -184,6 +187,9 @@ class Fudo:
             f.write(json.dumps(data, indent=4));
         else:
             f.write("[]");
+        self.loadMainData();
+        self.window.show_all()
+        self.Fudo.hide();
     def onFudoClose(self, *args):
         self.loadMainData();
         self.window.show_all()
